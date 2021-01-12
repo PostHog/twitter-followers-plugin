@@ -1,0 +1,29 @@
+{
+    "name": "twitter-followers-plugin",
+    "version": "0.0.1",
+    "description": "Get Twitter follower numbers in PostHog daily.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PostHog/twitter-followers-plugin.git"
+    },
+    "author": "Yakko Majuri",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/PostHog/twitter-followers-plugin/issues"
+    },
+    "homepage": "https://github.com/PostHog/twitter-followers-plugin#readme",
+    "devDependencies": {
+        "husky": "^4.3.0",
+        "lint-staged": "^10.5.2",
+        "prettier": "^2.2.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx,json,yml}": "prettier --write"
+    }
+}
