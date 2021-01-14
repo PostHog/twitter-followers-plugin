@@ -1,4 +1,4 @@
-# Twitter Followers Plugin (Beta)
+# Twitter Followers Plugin
 
 Get your Twitter follower numbers daily without signing up to the Twitter API.
 
