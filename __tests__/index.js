@@ -1,12 +1,4 @@
-const {
-    createEvent,
-    createIdentify,
-    createPageview,
-    createCache,
-    getMeta,
-    resetMeta,
-    clone
-} = require('posthog-plugins/test/utils.js')
+const { getMeta, resetMeta } = require('@posthog/plugin-scaffold/test/utils.js')
 const { setupPlugin, runEveryDay } = require('../index')
 const defaultRes = require('./res.json')
 
@@ -43,11 +35,12 @@ test('setupPlugin', async () => {
 test('creates an event with the updated follower count', async () => {
     await runEveryDay(getMeta())
     expect(fetch).toHaveBeenCalledTimes(1)
-    expect(
-        fetch
-    ).toHaveBeenCalledWith('https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=posthoghq', {
-        method: 'GET'
-    })
+    expect(fetch).toHaveBeenCalledWith(
+        'https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=posthoghq',
+        {
+            method: 'GET'
+        }
+    )
 
     expect(posthog.capture).toHaveBeenCalledTimes(1)
     expect(posthog.capture).toHaveBeenCalledWith('twitter_followers', { follower_count: 1402 })
