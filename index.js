@@ -1,3 +1,14 @@
+async function setupPlugin({ config }) {
+    const validationRes = await fetch(
+        `https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names=${config.twitterHandle}`
+    )
+    const validationResponseJson = await validationRes.json()
+
+    if (!validationResponseJson) {
+        throw new Error('Invalid Twitter handle.')
+    }
+}
+
 async function runEveryDay({ config }) {
     config.twitterHandle =
         config.twitterHandle[0] === '@'
@@ -22,4 +33,9 @@ async function fetchWithRetry(url, options = {}, method = 'GET', isRetry = false
         const res = await fetchWithRetry(url, options, (method = method), (isRetry = true))
         return res
     }
+}
+
+module.exports = {
+    setupPlugin,
+    runEveryDay
 }
