@@ -13,7 +13,7 @@ To view the follower count over time in Insights, do the following:
 
 1. Visit 'Project Plugins' under 'Settings'
 1. Enable plugins if you haven't already done so
-1. Click the 'Available' tab next to 'Installed'
+1. Click the 'Repository' tab next to 'Installed'
 1. Click 'Install' on this plugin
 1. Add your Twitter handle at the configuration step
 1. Enable your plugin and you're good to go!
