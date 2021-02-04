@@ -9,7 +9,7 @@
             "hint": "Without the @",
             "name": "Twitter Handle",
             "type": "string",
-            "default": "https://app.posthog.com",
+            "default": "",
             "required": false
         }
     ]
